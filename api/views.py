@@ -6,11 +6,12 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+
 class AutoresView(ListCreateAPIView):
     queryset = Autor.objects.all()
     serializer_class = AutorSerializers
 
-@app_view(['GET', 'POST'])
+@api_view(['GET', 'POST'])
 def visualizacao_autor(request):
     if request.method == 'GET':
         queryset = Autor.objects.all()
